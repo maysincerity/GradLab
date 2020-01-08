@@ -1,0 +1,23 @@
+{% extends 'FlightBooking/base.html' %}
+
+{% block login_display %}
+    <a href="#">您好， {{ username }}</a>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid" style="margin-top: 20px">
+        <div class="alert" style="background-color: white;overflow: hidden"> <!--超出部分也是白色底-->
+            <h1>您好</h1>
+            <div id="info_body" style="margin-left: 50px;margin-right: 50px">
+                <p>
+                    您已经订购过该航班，请勿重复订购，祝您旅途愉快！
+                </p>
+            </div>
+
+            <div id="book_btns" align="right">
+                <!--div内容右对齐-->
+                <a  class="btn btn-danger" style="width: 80px" onclick="history.back(-1);">返回</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

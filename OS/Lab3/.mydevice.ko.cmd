@@ -1,0 +1,1 @@
+cmd_/home/may/OS/Lab3/mydevice.ko := ld -r -m elf_x86_64 -z max-page-size=0x200000 -T ./scripts/module-common.lds --build-id  -o /home/may/OS/Lab3/mydevice.ko /home/may/OS/Lab3/mydevice.o /home/may/OS/Lab3/mydevice.mod.o ;  true

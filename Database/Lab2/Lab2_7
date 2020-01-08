@@ -1,0 +1,13 @@
+go
+create trigger thumb_control
+on thumb
+after insert
+as
+	if exists(select thumb.UID from THUMB,MBLOG where THUMB.BID = MBLOG.BID and THUMB.UID = MBLOG.UID)
+	begin
+		rollback transaction
+	end
+go
+
+
+insert into THUMB (uid,bid) values (1,1);

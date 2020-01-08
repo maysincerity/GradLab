@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="../../../../static/titleicon.png" />
+    <title>SSS 机票预订查询</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="../../static/src/jquery.min.js"></script>
+    <script src="../../static/src/bootstrap.min.js"></script>
+ 
+    {% block style %}
+    {% endblock %}
+    {% block js %}
+    {% endblock %}
+</head>
+<!-- <body style="background-color: #f1f1f1"> -->
+    <!-- 设置背景色 -->
+<body style="background-color: #F1f1f1">
+<nav class="nav">
+    <div class="container-fluid">
+        <!-- Header -->
+        <div class="navbar-header">
+            <a href = "{% url 'FlightBooking:index' %}" class="navbar-brand">SSS Chaos</a>
+        </div>
+        <!-- Items -->
+        <ul class="nav navbar-nav navbar-right">
+<!--             <li>
+                <a href="{% url 'FlightBooking:user_notice' %}">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp; 取票通知
+                </a>
+            </li> -->
+            <li>
+                {% block login_display %} <!--在用户登录之后改变这一块的显示内容-->
+                    <a href="{% url 'FlightBooking:login_user' %}">
+                        <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>&nbsp; 登录
+                    </a>
+                {% endblock %}
+            </li>
+            <li>
+                <a href="{% url 'FlightBooking:user_order' %}">
+                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp; 我的订单
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'FlightBooking:user_notice' %}">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp; 取票通知
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'FlightBooking:logout_user' %}">
+                    <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; 退出
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

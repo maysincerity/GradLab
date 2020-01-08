@@ -1,0 +1,74 @@
+{% extends 'FlightBooking/base.html' %}
+{% block login_display %}
+    <a href="#">您好， 管理员</a> <!--用#就不会跳转了-->
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="container-fluid col-sm-12" style="margin-top: 20px">
+        <h1>
+            月度收入
+        </h1>
+        <div>
+            <table class="table table-bordered table-striped">
+                <thead>
+                <th style="text-align: center; background: #FFE4E1">月份</th>
+                <th style="text-align: center; background: #E6E6FA">收入</th>
+                </thead>
+                <tbody align="center">
+                {% for income in month_incomes %}
+                    <tr>
+                        <td>{{ income.timeStore }}</td>
+                        <td>{{ income.income }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <br>
+        <h1>
+            季度收入
+        </h1>
+        <div>
+            <table class="table table-bordered table-striped">
+                <thead>
+                <th style="text-align: center; background: #FFE4E1">季度</th>
+                <th style="text-align: center; background: #E6E6FA">收入</th>
+                </thead>
+                <tbody align="center">
+                {% for income in period_incomes %}
+                    <tr>
+                        <td>{{ income.timeStore }}</td>
+                        <td>{{ income.income }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <br>
+        <h1>
+            年度收入
+        </h1>
+        <div>
+            <table class="table table-bordered table-striped">
+                <thead>
+                <th style="text-align: center; background: #FFE4E1">年份</th>
+                <th style="text-align: center; background: #E6E6FA">收入</th>
+                </thead>
+                <tbody align="center">
+                {% for income in year_incomes %}
+                    <tr>
+                        <td>{{ income.timeStore }}</td>
+                        <td>{{ income.income }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+{% endblock %}
